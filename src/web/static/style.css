@@ -6,6 +6,7 @@ body{
 }
 p{
     font-family: "M PLUS 1p";
+    color: black;
 }
 .login a{
     text-decoration: none;
@@ -14,10 +15,13 @@ p{
     opacity: 0.7;
 }
 .login_icon{
-    margin: 3px 10px 0 0;
+    margin: 5px 10px 0 0;
+    width: 45px;
+    height: 30px;
 }
 .login p{
     font-weight: 400;
+    margin-top: 15px ;
 }
 
 .header{
