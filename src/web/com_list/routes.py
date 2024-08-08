@@ -11,7 +11,7 @@ from flask import (
     request,
     url_for,
 )
-from flask_login import login_user, logout_user
+from flask_login import current_user, login_user, logout_user
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -29,6 +29,10 @@ def com_list():
     products = get_json_data()["content"]
     min_points = request.form.get("min_points")
     max_points = request.form.get("max_points")
+    if current_user.is_authenticated:
+        is_authenticated = True
+    else:
+        is_authenticated = False
 
     if request.method == "POST":
         try:
@@ -43,7 +47,11 @@ def com_list():
             flash("無効な入力値です。数値を入力してください。", "error")
 
     return render_template(
-        "product.html", products=products, min_points=min_points, max_points=max_points
+        "product.html",
+        products=products,
+        min_points=min_points,
+        max_points=max_points,
+        is_authenticated=is_authenticated,
     )
 
 
