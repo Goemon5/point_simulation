@@ -21,8 +21,10 @@ def com_list():
     products = get_json_data()["content"]
     min_points = request.form.get("min_points")
     max_points = request.form.get("max_points")
+    user=current_user
     if current_user.is_authenticated:
         is_authenticated = True
+        
     else:
         is_authenticated = False
 
@@ -39,7 +41,7 @@ def com_list():
             flash("無効な入力値です。数値を入力してください。", "error")
 
     return render_template(
-        "product.html", products=products, min_points=min_points, max_points=max_points,is_authenticated=is_authenticated
+        "product.html", user=user,products=products, min_points=min_points, max_points=max_points,is_authenticated=is_authenticated
     )
 
 

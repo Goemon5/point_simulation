@@ -8,6 +8,7 @@ SIMULATION_BP = Blueprint(
 
 @SIMULATION_BP.route("/", methods=["GET"])
 def simulation():
+    user=current_user
     if current_user.is_authenticated:
         init_data = {
             "current_point": current_user.current_point,
@@ -15,6 +16,7 @@ def simulation():
             "goal_point": current_user.goal_point,
         }
         is_authenticated = True
+        
     else:
         init_data = {
             "current_point": 0,
@@ -22,4 +24,4 @@ def simulation():
             "goal_point": 0,
         }
         is_authenticated = False
-    return render_template("simulation.html", init_data=init_data, is_authenticated=is_authenticated), 409
+    return render_template("simulation.html", user=user,init_data=init_data, is_authenticated=is_authenticated), 409

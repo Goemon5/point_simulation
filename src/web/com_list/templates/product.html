@@ -18,17 +18,28 @@
               </div>
               <div class="box">
                 <div class="mx-3 my-4">
-                  <h5 class="text-center">こんにちは</h6>
+                  <h5 class="text-center">こんにちは</h5>
                   <div class="login-btn">
 
                     {% if not is_authenticated %}
-                      <a href=" {{ url_for('app.auth.login') }} ">Login</a>
-                      <a href="{{ url_for('app.auth.signup') }}">signup</a>
+                      <div class="buttons">
+                        <div class="guest">ゲスト様</div>
+                        <form action="{{ url_for('app.auth.login') }}" method="get">
+                          <button class="buttonss" type="submit">Login</button>
+                        </form>
+                        <form action="{{ url_for('app.auth.signup') }}" method="get">
+                          <button class="buttonss" type="submit">signup</button>
+                        </form>
+                      </div>
+
                     {% endif %}
                     {% if is_authenticated %}
-                      <form action="{{ url_for('app.auth.logout') }}" method="get">
-                        <button type="submit">Logout</button>
-                      </form>
+                      <div class="buttons">
+                        <div class="text-center">{{user.username}}様</div>
+                        <form class="text-center" action="{{ url_for('app.auth.logout') }}" method="get">
+                          <button type="submit" class="buttonss">Logout</button>
+                        </form>
+                      </div>
 
                     {% endif %}
 
