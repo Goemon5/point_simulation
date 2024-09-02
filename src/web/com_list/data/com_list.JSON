@@ -1,0 +1,46 @@
+{
+  "name": "商品リスト",
+  "content": [
+    {
+      "id": 0,
+      "name": "色ペン",
+      "points": 240,
+      "img": "image/colored-pencils-402546_1280.jpg"
+    }, {
+      "id": 1,
+      "name": "ドライヤー",
+      "points": 6500,
+      "img": "image/hairdryer-295616_1280.jpg"
+    }, {
+      "id": 2,
+      "name": "付箋",
+      "points": 340,
+      "img": "image/post-it-notes-5895716_1280.jpg"
+    }, {
+      "id": 3,
+      "name": "鍋",
+      "points": 3400,
+      "img": "image/royal-fan-1195360_1280.jpg"
+    }, {
+      "id": 4,
+      "name": "ミキサー",
+      "points": 7500,
+      "img": "image/woman-6082552_1280.jpg"
+    }, {
+      "id": 5,
+      "name": "モニター",
+      "points": 34000,
+      "img": "image/22220635_s.jpg"
+    }, {
+      "id": 6,
+      "name": "扇風機",
+      "points": 4980,
+      "img": "image/30029386_s.jpg"
+    }, {
+      "id": 7,
+      "name": "パソコン",
+      "points": 95800,
+      "img": "image/30422744_s.jpg"
+    }
+  ]
+}
